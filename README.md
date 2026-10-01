@@ -118,7 +118,9 @@ To rerun the benchmark: `python evaluate.py --setup all`
 
 | File | Purpose |
 |---|---|
-| `app.py`, `pages/1_Scorecard.py` | The two pages of the app |
+| `app.py` | Entry point and page navigation |
+| `views/ask.py`, `views/scorecard.py` | The two pages of the app |
+| `charts.py` | The bar chart both pages use |
 | `engine.py` | Builds the prompt, calls the model, checks and runs the SQL |
 | `schema.md` | The written notes about the data that are sent to the model |
 | `examples.yaml` | The six worked examples |
