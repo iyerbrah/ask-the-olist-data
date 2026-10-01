@@ -1,0 +1,6 @@
+streamlit
+duckdb
+openai
+sqlglot
+pyyaml
+pandas

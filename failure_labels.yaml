@@ -1,0 +1,29 @@
+# Hand-written reason for each failed question, per run. Shown on the Scorecard page.
+# The key is the results file name without .json.
+
+names_only__deepseek-deepseek-v4-pro:
+  m12: "wrong column: returned the Portuguese category name, never told to use the English one"
+  h01: "wrong definition: summed payments (includes freight and undelivered orders) instead of item prices"
+  h02: "wrong key: counted customer_id, which is new for every order, so the answer is always 0"
+  h03: "wrong filter: included orders that were never delivered"
+  h05: "wrong definition: used payment value as revenue"
+  h08: "wrong filter: included orders that were never delivered"
+  h10: "wrong key: counted customer rows, not distinct people"
+  h11: "wrong key: grouped by customer_id, so nobody has more than one order"
+  h12: "wrong definition: added freight to revenue and kept undelivered orders"
+  h15: "wrong key: took the first purchase per customer_id, not per person"
+
+notes__deepseek-deepseek-v4-pro:
+  m17: "wrong aggregation: GROUP BY with HAVING returned one row per order instead of a single count"
+
+notes_examples__deepseek-deepseek-v4-pro:
+  m02: "wrong filter: added a delivered-only filter the question did not ask for (copied from the revenue example)"
+  m12: "wrong filter: added a delivered-only filter the question did not ask for (copied from the revenue example)"
+
+full__deepseek-deepseek-v4-pro:
+  m20: "wrong aggregation: counted distinct review_id because the notes say it repeats; the question is arguably ambiguous"
+
+full__deepseek-deepseek-v4-flash:
+  m02: "wrong filter: added a delivered-only filter the question did not ask for"
+  m06: "wrong filter: added a delivered-only filter the question did not ask for"
+  m14: "wrong filter: added a delivered-only filter the question did not ask for"

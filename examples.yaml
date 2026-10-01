@@ -1,0 +1,35 @@
+# Worked examples shown to the model in the "examples" setups.
+# None of these may overlap with benchmark.yaml, or the score is inflated.
+- question: How many sellers are there in each state?
+  sql: SELECT seller_state, count(*) AS sellers FROM sellers GROUP BY seller_state ORDER BY sellers DESC
+
+- question: How many orders did customers in the state BA place in January 2018?
+  sql: >
+    SELECT count(*) AS orders
+    FROM orders o JOIN customers c ON o.customer_id = c.customer_id
+    WHERE c.customer_state = 'BA'
+      AND o.order_purchase_timestamp >= DATE '2018-01-01'
+      AND o.order_purchase_timestamp < DATE '2018-02-01'
+
+- question: Which 3 categories were charged the most freight in total? Return the category and the total freight.
+  sql: >
+    SELECT t.product_category_name_english AS category, sum(i.freight_value) AS total_freight
+    FROM order_items i
+    JOIN products p ON i.product_id = p.product_id
+    JOIN product_category_name_translation t ON p.product_category_name = t.product_category_name
+    GROUP BY category ORDER BY total_freight DESC LIMIT 3
+
+- question: What was the revenue in 2017?
+  sql: >
+    SELECT sum(i.price) AS revenue
+    FROM order_items i JOIN orders o ON i.order_id = o.order_id
+    WHERE o.order_status = 'delivered' AND year(o.order_purchase_timestamp) = 2017
+
+- question: How many customers placed an order in 2018?
+  sql: >
+    SELECT count(DISTINCT c.customer_unique_id) AS customers
+    FROM orders o JOIN customers c ON o.customer_id = c.customer_id
+    WHERE year(o.order_purchase_timestamp) = 2018
+
+- question: What is the average salary of the sellers' employees?
+  sql: CANNOT_ANSWER
