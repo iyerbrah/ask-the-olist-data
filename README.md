@@ -4,6 +4,8 @@ Ask a business question in plain English; get the answer, a chart, and the SQL t
 The Scorecard page reports how often the generated SQL is correct, measured against a
 hand-written benchmark.
 
+Live app: https://text-to-sql-scorecard-xgu4cnfjvj5qghjrasbdkh.streamlit.app/
+
 ## Setup
 
 1. `pip install -r requirements.txt`
