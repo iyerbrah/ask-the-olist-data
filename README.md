@@ -1,4 +1,4 @@
-# Ask the OList Data
+# Text-to-SQL Analytics Assistant
 
 Ask a business question in plain English and get the answer from a real database, along
 with the SQL that produced it. Then see how often those answers are actually right.

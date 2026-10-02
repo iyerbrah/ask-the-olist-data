@@ -67,7 +67,7 @@ def show_sidebar():
         st.caption(f"Questions left this session: {MAX_QUESTIONS - st.session_state.get('used', 0)}")
 
 
-st.title("Ask the Olist data")
+st.title("Text-to-SQL analytics assistant")
 st.write("Ask a business question in plain English. You get the answer and the SQL that produced it.")
 
 picked = st.pills("Try one", EXAMPLES, label_visibility="collapsed")
