@@ -5,6 +5,10 @@ with the SQL that produced it. Then see how often those answers are actually rig
 
 **Try it:** https://text-to-sql-scorecard-xgu4cnfjvj5qghjrasbdkh.streamlit.app/
 
+**Built with:** Python, SQL (DuckDB), Streamlit, Altair, sqlglot, an LLM through the OpenRouter API
+
+![The Scorecard page: accuracy for each setup on the 60 test questions](docs/scorecard.png)
+
 ## The finding
 
 A language model given only the table and column names answered **83%** of 60 test
@@ -13,6 +17,12 @@ answered **98%**. Nothing else that was tried made a measurable difference.
 
 The model was never bad at SQL. It was missing what the business means by its own words:
 what counts as revenue, and what counts as a customer.
+
+## Why I built it
+
+Tools that let people ask data questions in plain English are easy to demo and hard to
+trust: a wrong number looks exactly like a right one. I wanted to measure how often the
+answers are right, and find out what actually makes them right.
 
 ## What it does
 
@@ -129,3 +139,5 @@ To rerun the benchmark: `python evaluate.py --setup all`
 | `results/` | Every question, generated query and outcome for each run |
 | `failure_labels.yaml` | The reason for each failed question |
 | `build_db.py` | Loads the CSVs into the database file |
+| `olist.duckdb` | The database itself, so the app runs without the download |
+| `docs/` | Screenshot used in this README |
