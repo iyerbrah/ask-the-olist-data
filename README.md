@@ -3,7 +3,7 @@
 Ask a business question in plain English and get the answer from a real database, along
 with the SQL that produced it. Then see how often those answers are actually right.
 
-**Try it:** https://text-to-sql-scorecard-xgu4cnfjvj5qghjrasbdkh.streamlit.app/
+**Try it:** https://ask-the-olist-data-5bcmydxcckwd6pjb5cybm7.streamlit.app/
 
 **Built with:** Python, SQL (DuckDB), Streamlit, Altair, sqlglot, an LLM through the OpenRouter API
 
