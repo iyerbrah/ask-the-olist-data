@@ -3,7 +3,7 @@ import os
 
 import streamlit as st
 
-st.set_page_config(page_title="Text-to-SQL Scorecard", page_icon=":material/database:")
+st.set_page_config(page_title="Ask the OList Data", page_icon=":material/database:")
 
 try:
     os.environ.setdefault("OPENROUTER_API_KEY", st.secrets["OPENROUTER_API_KEY"])
